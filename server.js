@@ -76,6 +76,14 @@ app.get('/about', (req,res) => {
   });// object second arg optional
 });
 
+app.get('/projects', (req,res) => {
+
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    name: 'Projects'
+  });
+});
+
 app.get('/bad', (req,res) =>{
   res.send({
     error: 'Stimulated',
