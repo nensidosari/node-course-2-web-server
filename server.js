@@ -2,6 +2,10 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+
+//the port to deploy to heroku
+const port = process.env.PORT || 4000;
+
 let app = express(); // call the method to create the app
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -79,8 +83,8 @@ app.get('/bad', (req,res) =>{
   });
 });
 
-app.listen(4000, ()=> {
-  console.log('server is up on port 4000');
+app.listen(port, ()=> {
+  console.log(`server is up on port ${port}`);
 }); // to bind the app to a port on our machine
 
 // if you want app.listen can take another argument
